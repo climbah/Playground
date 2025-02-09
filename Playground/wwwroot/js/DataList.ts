@@ -1,4 +1,4 @@
-﻿// import {makeAjaxCall, mapTemplate} from "./GlobalFunctions";
+﻿ import {makeAjaxCall, mapTemplate} from "./GlobalFunctions";
 
 export class DataList {
     Root: HTMLDivElement;
@@ -109,3 +109,11 @@ export class DataList {
         this.Root.classList.remove("result-open")
     }
 }
+const initSearches = () => {
+    const searches = document.getElementsByClassName('search');
+
+    for (let i = 0; i < searches.length; i++) {
+        const search = searches[i] as HTMLDivElement;
+        new DataList(search);
+    }
+};
