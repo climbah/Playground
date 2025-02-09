@@ -1,0 +1,136 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body {
+  //padding: 1em;
+  //font-family: system-ui;
+  //background: #f06d06;
+  //color: white;
+  //text-align: center;
+}
+
+.search {
+  width: 30vw;
+  .input {
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+
+    .input-icons {
+      position: relative;
+      right: $icon-padding;
+      padding-right: 0;
+      display: flex;
+      width: 0;
+      flex-direction: row-reverse;
+      // pointer-events: none;
+      .input-icon {
+        color: $gray-600;
+        font-size: 1.3em;
+        padding-right: $icon-padding;
+
+        &:hover {
+          color: $gray-900;
+          cursor: pointer;
+        }
+
+        &.hide {
+          display: none;
+        }
+
+        &:nth-child(1) {
+          padding-right: 0;
+          display: none;
+        }
+      }
+    }
+  }
+
+  .data {
+    padding: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    display: none;
+    max-height: 8em;
+    overflow-y: auto;
+    list-style-type: none;
+
+    .item {
+      font-size: 1em;
+      line-height: 1.5em;
+      padding: 0.5em 1em;
+      border-bottom: 1px solid lightgray;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .indicator {
+        width: 15px;
+        height: 15px;
+        display: flex;
+        right: 0;
+        border-radius: 50px;
+        background-color: gray;
+
+        &.green {
+          background-color: green;
+        }
+
+        &.orange {
+          background-color: orange;
+        }
+
+        &.red {
+          background-color: red;
+        }
+      }
+    }
+  }
+
+  &.loading {
+    .input .input-icon {
+      color: gray;
+
+      &:nth-child(1) {
+        display: block;
+        color: green;
+      }
+    }
+  }
+
+  &.result-open {
+    .list-indicator::before {
+      @include icon(chevron-down);
+    }
+
+    .input input {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .data {
+      display: block;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}
+
+
+

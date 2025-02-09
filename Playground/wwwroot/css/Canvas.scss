@@ -1,0 +1,22 @@
+﻿canvas {
+  width: 100vw;
+  height: calc(100vh - 57px);
+  background: #000;
+}
+.turn-order{
+  width: 80vw;
+  height: 100px;
+  border: 1px solid red;
+  position: fixed;
+  left: 10vw;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  .placeholder{
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+    background-color: red;
+    cursor: pointer;
+  }
+}

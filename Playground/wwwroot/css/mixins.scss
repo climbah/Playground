@@ -1,0 +1,5 @@
+﻿@mixin icon($icon) {
+  @include fa-icon;
+  @extend .fas;
+  @extend .fa-#{$icon};
+}
